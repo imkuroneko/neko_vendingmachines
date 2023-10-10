@@ -6,8 +6,8 @@ description 'Sistema de máquinas expendedoras'
 version '1.0.0'
 
 client_scripts {
-	'config.lua',
-	'client/client.lua',
+    'config.lua',
+    'client.lua',
 }
 
 dependencies {
