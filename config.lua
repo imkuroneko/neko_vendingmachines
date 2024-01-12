@@ -2,7 +2,10 @@ Config = {}
 
 Config.OutOfService = 'Esta máquina expendedora se encuentra fuera de servicio'
 
+Config.Inventory = 'ox_inventory' -- qb-inventory / ox_inventory
+
 Config.Drinks = {
+    type = 'drinks',
     props = {
         'prop_vend_soda_01',
         'prop_vend_soda_02',
@@ -10,38 +13,58 @@ Config.Drinks = {
     },
     label = 'Máquina de Bebidas',
     icon = 'fas fa-beer',
+    price = 45,
     items = {
-        [1] = { name = 'lata_pepsi',       price = 45, amount = 200, info = {}, type = 'item', slot = 1 },
-        [2] = { name = 'lata_mirinda',     price = 45, amount = 200, info = {}, type = 'item', slot = 2 },
-        [3] = { name = 'lata_7up',         price = 45, amount = 200, info = {}, type = 'item', slot = 3 },
+        'lata_pepsi',
+        'lata_mirinda',
+        'lata_7up',
     }
 }
 
 Config.Snacks = {
+    type = 'snacks',
     props = {
         'prop_vend_snak_01',
         'prop_vend_snak_01_tu',
     },
     label = 'Máquina de Snacks',
     icon = 'fas fa-burger',
+    price = 35,
     items = {
-        [1] = { name = 'cereal_zucaritas', price = 35, amount = 200, info = {}, type = 'item', slot = 1 },
-        [2] = { name = 'cereal_barra',     price = 35, amount = 200, info = {}, type = 'item', slot = 2 },
-        [3] = { name = 'snacks_lays',      price = 35, amount = 200, info = {}, type = 'item', slot = 3 },
-        [4] = { name = 'snacks_doritos',   price = 35, amount = 200, info = {}, type = 'item', slot = 4 },
-        [5] = { name = 'snacks_cheetos',   price = 35, amount = 200, info = {}, type = 'item', slot = 5 },
+        'cereal_zucaritas',
+        'cereal_barra',
+        'snacks_lays',
+        'snacks_doritos',
+        'snacks_cheetos',
     }
 }
 
 Config.Coffee = {
+    type = 'coffee',
     props = {
         'prop_vend_coffe_01',
     },
     label = 'Máquina de Café',
     icon = 'fas fa-coffee',
+    price = 50,
     items = {
-        [1] = { name = 'cafe_espresso',        price = 50, amount = 200, info = {}, type = 'item', slot = 1 },
-        [2] = { name = 'cafe_con_leche',       price = 50, amount = 200, info = {}, type = 'item', slot = 2 },
-        [3] = { name = 'chocolate_con_leche',  price = 50, amount = 200, info = {}, type = 'item', slot = 3 },
+        'cafe_espresso',
+        'cafe_con_leche',
+        'chocolate_con_leche',
+    }
+}
+
+Config.Slush = {
+    type = 'slush',
+    props = {
+        'prop_slush_dispenser'
+    },
+    label = 'Batidos',
+    icon = 'fas fa-ice-cream',
+    price = 40,
+    items = {
+        'slushie_frutilla',
+        'slushie_menta',
+        'slushie_naranja',
     }
 }
