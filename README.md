@@ -1,20 +1,30 @@
-# neko_vendingmachines
-📦 Sistema de máquinas expendedoras para QBCore
+<h1 align="center">🥤 neko_vendingmachines</h1>
 
-### ☕ Máquina de Café
-![image](https://github.com/imkuroneko/neko_vendingmachines/assets/20273059/5bad2498-c106-4f8c-998b-1b0855657a3a)
+<p align="center">
+  <img src="https://img.shields.io/github/repo-size/imkuroneko/neko_vendingmachines?style=flat"/> &nbsp;
+  <img src="https://img.shields.io/github/languages/top/imkuroneko/neko_vendingmachines?style=flat"/> &nbsp;
+  <img src="https://img.shields.io/github/last-commit/imkuroneko/neko_vendingmachines?color=pink&style=flat"/>
+</p>
 
-### 🥤 Máquina de Bebidas
-![image](https://github.com/imkuroneko/neko_vendingmachines/assets/20273059/b7d8ddcf-fb96-4879-abfe-61fa3cee49cf)
 
-### 🍧 Máquina de Batidos
-![image](https://github.com/imkuroneko/neko_vendingmachines/assets/20273059/fc1028f8-d33d-4dbc-97ec-e080f07efff2)
+Sistema de interacción con máquinas de alimentos/bebidas para servidores de FiveM basado en QBCore;
+Distintas opciones pueden ser creadas siguiendo el esquema del archivo de configuración
 
-### 🍪 Máquina Expendedora
-![image](https://github.com/imkuroneko/neko_vendingmachines/assets/20273059/b767f9bf-0f2c-4ae8-a50e-d02368044680)
+<br>
 
-### Requerimientos
-- `qb-core`
+### 📦 Dependencias
 - `qb-target`
-- `qb-menu`
-- `qb-inventory` o `ox_inventory` 
+- `ox_lib`
+- `ox_inventory`
+
+<br>
+
+<p align="center"> <img src="https://github.com/imkuroneko/neko_vendingmachines/assets/20273059/1da5f3d9-47ff-4227-a8ab-baa022785433" width="75%" /> </p>
+
+-----
+
+<p align="center">
+  <a href="https://kuroneko.im" target="_blank">
+    <img src="https://kuroneko.im/web/assets/images/profile.png" width="120">
+  </a>
+</p>
