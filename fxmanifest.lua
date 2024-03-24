@@ -1,28 +1,15 @@
-author 'imkuroneko'
+fx_version  'cerulean'
+game        'gta5'
+lua54       'yes'
+-- ===========================================================
 description 'Sistema de máquinas expendedoras'
-version '1.0.0'
+author      'KuroNeko'
+-- ===========================================================
+version     '1.1.0'
 
-lua54 'yes'
-
-fx_version 'cerulean'
-game 'gta5'
-
-shared_scripts {
-    'config.lua'
-}
-
-client_scripts {
-    'client.lua',
-}
-
-server_scripts {
-    'server.lua'
-}
-
-dependencies {
-    'ox_inventory'
-}
-
-dependencies {
-    'qb-target'
-}
+-- ===========================================================
+shared_scripts { '@ox_lib/init.lua', 'config.lua' }
+server_scripts { 'server.lua' }
+client_scripts { 'client.lua' }
+files          { 'locales/es.json' }
+dependencies   { 'qb-target', 'ox_inventory' }

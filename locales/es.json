@@ -1,0 +1,7 @@
+{
+    "option_description" : "Comprar x1 %s a $%s",
+    "item_not_found" : "No se ha encontrado este artículo en la máquina expendedora",
+    "not_enough_money" : "No tienes suficiente en efectivo",
+    "item_buyed" : "Has comprado x1 %s",
+    "inventory_full" : "Oops! Vacía un poco tus bolsillos para comprar este artículo"
+}

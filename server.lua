@@ -1,25 +1,14 @@
-QBCore = exports['qb-core']:GetCoreObject()
+lib.locale()
+local QBCore = exports['qb-core']:GetCoreObject()
+local ox_inventory = exports.ox_inventory
 
-local PurchasablesItems = {
-    ['drinks'] = {},
-    ['snacks'] = {},
-    ['coffee'] = {},
-    ['slush'] = {},
-}
-
-for key, value in pairs(Config.Drinks.items) do
-    PurchasablesItems['drinks'][value] = Config.Drinks.price
+local PurchasablesItems = {}
+for typeMachine, dataMachine in pairs(Config.Machines) do
+    PurchasablesItems[typeMachine] = {}
+    for itemId, itemCod in pairs(dataMachine.items) do
+        PurchasablesItems[typeMachine][itemCod] = dataMachine.price
+    end
 end
-for key, value in pairs(Config.Snacks.items) do
-    PurchasablesItems['snacks'][value] = Config.Snacks.price
-end
-for key, value in pairs(Config.Coffee.items) do
-    PurchasablesItems['coffee'][value] = Config.Coffee.price
-end
-for key, value in pairs(Config.Slush.items) do
-    PurchasablesItems['slush'][value] = Config.Slush.price
-end
-
 
 RegisterNetEvent('neko_vendingmachine:server:sellitem', function(data)
     local src = source
@@ -27,18 +16,17 @@ RegisterNetEvent('neko_vendingmachine:server:sellitem', function(data)
     local price = PurchasablesItems[data.type][data.item]
 
     if price ~= nil then
-
         if Player.Functions.GetMoney('cash') >= price then
-            if Player.Functions.AddItem(data.item, 1) then
-                Player.Functions.RemoveMoney('cash', price)
-                TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[data.item], 'add')
-                TriggerClientEvent('QBCore:Notify', src, 'Has comprado x1 '..data.label, 'success')
+            if ox_inventory:CanCarryItem(source, data.item, 1) then
+                ox_inventory:RemoveItem(source, 'cash', price)
+                ox_inventory:AddItem(source, data.item, 1)
+                TriggerClientEvent('ox_lib:notify', src, { description = locale('item_buyed', data.label), type = 'success' })
             end
         else
             TriggerClientEvent('QBCore:Notify', src, 'No tienes suficiente en efectivo', 'error')
+            TriggerClientEvent('ox_lib:notify', src, { description = locale('not_enough_money'), type = 'error' })
         end
-
     else
-        TriggerClientEvent('QBCore:Notify', src, 'No se ha encontrado este artículo en la máquina expendedora', 'error')
+        TriggerClientEvent('ox_lib:notify', src, { description = locale('item_not_found'), type = 'error' })
     end
 end)
