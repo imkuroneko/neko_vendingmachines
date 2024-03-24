@@ -23,7 +23,6 @@ RegisterNetEvent('neko_vendingmachine:server:sellitem', function(data)
                 TriggerClientEvent('ox_lib:notify', src, { description = locale('item_buyed', data.label), type = 'success' })
             end
         else
-            TriggerClientEvent('QBCore:Notify', src, 'No tienes suficiente en efectivo', 'error')
             TriggerClientEvent('ox_lib:notify', src, { description = locale('not_enough_money'), type = 'error' })
         end
     else
