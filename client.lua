@@ -21,13 +21,13 @@ for typeMachine, dataMachine in pairs(Config.Machines) do
 
     -- === Add items on menu
     for itemId, itemCod in pairs(dataMachine.items) do
-        table.insert(MenuMachines[typeMachine].options, {
+        MenuMachines[typeMachine].options[itemCod] = {
             title       = ItemsName[itemCod],
             description = locale('option_description', ItemsName[itemCod], dataMachine.price),
             icon        = dataMachine.icon,
             serverEvent = 'neko_vendingmachine:server:sellitem',
             args        = { item = itemCod, type = typeMachine, label = ItemsName[itemCod] }
-        })
+        }
     end
 
     lib.registerContext(MenuMachines[typeMachine])
